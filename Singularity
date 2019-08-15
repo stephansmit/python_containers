@@ -3,7 +3,8 @@ From: ubuntu:16.04
 
 %environment
 
-  
+%files
+    requirements.txt /opt/  
 %post
     echo "Update apt-get"
     apt-get -y update
@@ -15,6 +16,6 @@ From: ubuntu:16.04
     
     echo "Install python packages"
     python3 -m pip install --upgrade pip numpy
-    python3 -m pip install pandas spython scipy scikit-learn seaborn
+    python3 -m pip install -r /opt/requirements.txt
 %runscript
-     exec /usr/bin/python3 $1 $2   
+     exec /usr/bin/python3 "$@"   
