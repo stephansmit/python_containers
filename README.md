@@ -1,4 +1,4 @@
-# Singularity container with for Python scripts
+# Singularity container for Python scripts
 
 ## Build Container
 ~~~
